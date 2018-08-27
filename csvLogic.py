@@ -21,7 +21,12 @@ def createCsv(dataset, dict_values):
                         if(dataset[key][i]<int(value)):
                             flag = False
                     elif(checkColType(dataset,key)=="object"):
-                        if(dataset[key][i]!=value):
+                        flag2 = False
+                        for elem in value:
+                            if(flag2==False):
+                                if(dataset[key][i]==elem):
+                                    flag2 = True
+                        if(flag2==False):
                             flag = False
             if(flag):
                 newfile.writerow(dataset.iloc[i])
@@ -37,13 +42,15 @@ def checkColType(dataset, column):
 
 
 # def main():
-#     title = "Family Income and Expenditure.csv"
-#     dataset = readCsv(title)
-#     dict_values = {}
-#     dict_values["Household Head Age"] = 40
-#     dict_values["Total Number of Family members"] = 3
-#     dict_values["Region"] = "CAR"
-#     #createCsv(dataset, dict_values)
-#     print(dataset["Region"].unique())
+#      title = "Family Income and Expenditure.csv"
+#      dataset = readCsv(title)
+#      dict_values = {}
+#      dict_values["Household Head Age"] = 40
+#      dict_values["Total Number of Family members"] = 3
+#      dict_values["Household Head Marital Status"] = ["Married", "Annulled", "Single"]
+#      dict_values["Region"] = "CAR"
+#      createCsv(dataset, dict_values)
+#      print("ok")
+#      print(dataset["Region"].unique())
 #
 # main()
