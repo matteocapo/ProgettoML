@@ -19,7 +19,8 @@ def main():
 
         dict_values = dict()
         dict_values[lbl2.cget("text")] = txt1.get()
-        dict_values[lbl3.cget("text")] = combo1.get()
+        if combo1.get() != "null":
+            dict_values[lbl3.cget("text")] = combo1.get()
 
         if combo2.get() != "null":
             dict_values[lbl4.cget("text")] = combo2.get()
@@ -118,7 +119,7 @@ def main():
     lbl3 = Label(window, text="Household Head Class of Worker", font=("Arial", 12))
     lbl3.grid(column=1, row=2)
     combo1 = Combobox(window)
-    combo1['values'] = ("Employer in own family-operated farm or business", "NA", "Self-employed wihout any employee", "Worked for government/government corporation", "Worked for private establishment", "Worked for private household","Worked with pay in own family-operated farm or business","Worked without pay in own family-operated farm or business")
+    combo1['values'] = ("null", "Employer in own family-operated farm or business", "NA", "Self-employed wihout any employee", "Worked for government/government corporation", "Worked for private establishment", "Worked for private household","Worked with pay in own family-operated farm or business","Worked without pay in own family-operated farm or business")
     combo1.current(0)  # set the selected item
     combo1.grid(column=2, row=2)
 
