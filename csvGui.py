@@ -32,6 +32,7 @@ def main():
         dict_values[lbl13.cget("text")] = combo7.get()
 
         createCsv(dataset,dict_values)
+        print("Il csv è stato filtrato!")
 
 
 

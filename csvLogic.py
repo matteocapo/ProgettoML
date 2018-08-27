@@ -16,12 +16,13 @@ def createCsv(dataset, dict_values):
         for i in range(dataset.shape[0]):
             flag = True
             for key,value in dict_values.items():
-                if(checkColType(dataset,key)=="int64"):
-                    if(dataset[key][i]<value):
-                        flag = False
-                elif(checkColType(dataset,key)=="object"):
-                    if(dataset[key][i]!=value):
-                        flag = False
+                if(flag):
+                    if(checkColType(dataset,key)=="int64"):
+                        if(dataset[key][i]<int(value)):
+                            flag = False
+                    elif(checkColType(dataset,key)=="object"):
+                        if(dataset[key][i]!=value):
+                            flag = False
             if(flag):
                 newfile.writerow(dataset.iloc[i])
 
