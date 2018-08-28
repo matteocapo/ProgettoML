@@ -20,10 +20,10 @@ def main():
         dict_values = dict()
         dict_values[lbl2.cget("text")] = txt1.get()
         if combo1.get() != "null":
-            dict_values[lbl3.cget("text")] = combo1.get()
+            dict_values[lbl3.cget("text")] = [combo1.get()]
 
         if combo2.get() != "null":
-            dict_values[lbl4.cget("text")] = combo2.get()
+            dict_values[lbl4.cget("text")] = [combo2.get()]
 
         marital = []
         if chk_state2.get() == 1:
@@ -67,7 +67,7 @@ def main():
         dict_values[lbl8.cget("text")] = txt2.get()
 
         if combo6.get() != "null":
-            dict_values[lbl9.cget("text")] = combo6.get()
+            dict_values[lbl9.cget("text")] = [combo6.get()]
 
         dict_values[lbl10.cget("text")] = txt3.get()
         dict_values[lbl11.cget("text")] = txt4.get()
